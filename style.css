@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&family=Ubuntu:ital,wght@1,300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.0rem;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    width: 9.5rem;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: -20px 20px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+}
+
+.colid {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.metallic {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.pearl {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card .content {
+    padding: 20px;
+    position: relative;
+    transform: translateY(200%);
+    opacity: 0;
+    transition: 0.5s
+}
+
+.card:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card .content h3 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+
+.card .content p {
+    font-size: 0.08rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+.cardbody {
+    min-height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    right: 50%;
+}
+
+.colorvariation {
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    width: 50vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.colors {
+    width: 30rem;
+    height: 21rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(90%);
+    border-radius: 15px;
+    box-shadow: -0.1px 0.1px 1px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    overflow: hidden;
+}
+
+.colors ul {
+    list-style: none;
+    display: flex;
+}
+
+.colors ul li {
+    display: inline-block;
+    margin: 0 0.8rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: red;
+}
+
+.blue {
+    background-color: rgba(0, 0, 255, 0.5);
+    color: blue;
+}
+
+.green {
+    background-color: rgba(0, 128, 0, 0.5);
+    color: green;
+}
+
+.yellow {
+    background-color: rgba(255, 255, 0, 0.5);
+    color: yellow;
+}
+
+.black {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+.brown {
+    background-color: rgba(90, 7, 7, 0.5);
+    color: rgb(103, 18, 18);
+}
+
+nav {
+    width: 80%;
+    display: flex;
+    z-index: 2;
+    margin: 20px auto;
+    position: sticky;
+    align-items: center;
+    font-weight: 550;
+}
+
+.logo-area {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 20%;
+    height: 20%;
+    margin-right: 12px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.nav-links ul a {
+    font-weight: 600;
+    color: rgb(35, 173, 22);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links ul a :hover {
+    color: rgb(9, 71, 30)
+}
+
+.grade-container {
+    width: 2000px;
+    height: 2000px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.imfomation {
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+#circle {
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+    transition: 1s;
+    align-items: center;
+    z-index: 2;
+    font-size: 1rem;
+}
+
+.feature {
+    display: flex;
+    position: absolute;
+    color: #fff;
+    align-items: center;
+}
+
+.feature img {
+    width: 9rem;
+    padding-right: 20px;
+}
+
+.feature div {
+    margin-left: 2px;
+}
+
+.one {
+    /* solid */
+    /* 右上 */
+    top: -300px;
+    /* やや右下 */
+    right: -100px;
+    transform: rotate(-240deg);
+}
+
+.two {
+    /* metallic */
+    top: 450px;
+    left: -550px;
+}
+
+.three {
+    /*pearl*/
+    /* 左上 */
+    bottom: -320px;
+    /* 左下 */
+    right: -160px;
+    transform: rotate(-120deg)
+}
+
+.gun {
+    width: 10rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-54%);
+    right: 0;
+    z-index: 1;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 3;
+}
+
+.control img {
+    width: 15%;
+}
+
+.control h3 {
+    color: #fff;
+    margin: 20px 0;
+}
+
+#upBtn {
+    cursor: pointer;
+}
+
+#downBtn {
+    cursor: pointer;
+    transform: rotate(-180deg);
+}
+
+.gradiate {
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    right: 40rem;
+    box-shadow: 30px 30px 30px rgb(54, 4, 236);
+    transform: rotate(-45deg);
+    z-index: 1;
+    background: linear-gradient(to right bottom, rgb(111, 141, 201), rgb(54, 4, 236));
+}
+
+.graditionred {
+    box-shadow: 30px 30px 30px rgb(236, 4, 4);
+    background: linear-gradient(to right bottom, rgb(201, 111, 111), rgb(236, 4, 4));
+}
+
+.graditionblue {
+    box-shadow: 30px 30px 30px rgb(54, 4, 236);
+    background: linear-gradient(to right bottom, rgb(111, 160, 201), rgb(54, 4, 236));
+}
+
+.graditiongreen {
+    box-shadow: 30px 30px 30px rgb(19, 236, 4);
+    background: linear-gradient(to right bottom, rgb(114, 201, 111), rgb(19, 236, 4));
+}
+
+.graditionyellow {
+    box-shadow: 30px 30px 30px rgb(236, 236, 4);
+    background: linear-gradient(to right bottom, rgb(201, 201, 111), rgb(236, 236, 4));
+}
+
+.graditionblack {
+    box-shadow: 30px 30px 30px rgb(3, 3, 3);
+    background: linear-gradient(to right bottom, rgb(56, 56, 48), rgb(3, 3, 3));
+}
+
+.graditionbrown {
+    box-shadow: 30px 30px 30px rgb(57, 0, 0);
+    background: linear-gradient(to right bottom, rgb(61, 45, 45), rgb(57, 0, 0));
+}
