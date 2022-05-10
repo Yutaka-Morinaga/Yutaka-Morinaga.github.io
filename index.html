@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <div class="cardbody">
+        <div class="card metallic" id="card">
+            <div class="content">
+                <h3>Color Sample</h3>
+                <p>カラーサンプルです。<br>製品の塗装前の状態によって多少色味が変わることがあります。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="colorvariation">
+        <div class="colors">
+            <ul>
+                <li class="red" id="red">red</li>
+                <li class="blue" id="blue">blue</li>
+                <li class="green" id="green">green</li>
+                <li class="yellow" id="yellow">yellow</li>
+                <li class="black" id="black">black</li>
+                <li class="brown" id="brown">brown</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <nav>
+            <div class="logo-area">
+                <img src="./images/tosou_airbrush.png" class="logo">
+                <h2>Painting Simulation</h2>
+            </div>
+
+            <div class="nav-links">
+                <ul>
+                    <a href="">
+                        <li>Cost</li>
+                    </a>
+                    <a href="">
+                        <li>Shop</li>
+                    </a>
+                    <a href="">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <div class="grade-container">
+            <div id="gradiate" class="gradiate"></div>
+        </div>
+        <div class="imfomation">
+            <div class="overlay"></div>
+            <img src="./images/gun-image.jpeg" class="gun" />
+            <div id="circle">
+                <div class="feature one">
+                    <img src="./images/coating-img01.png" />
+                    <div>
+                        <h1>SOLID</h1>
+                        <p>単一の色目のカラー<br>メタリックやパールと比較すると<br>シンプルで塗装がしやすい
+                        </p>
+                    </div>
+                </div>
+                <div class="feature two">
+                    <img src="./images/coating-img02.png" />
+                    <div>
+                        <h1>METALLIC</h1>
+                        <p>微粒なアルミ片を含んだカラー <br> 光に反射しきらきらと輝く
+                        </p>
+                    </div>
+                </div>
+                <div class="feature three">
+                    <img src="./images/coating-img03.png" />
+                    <div>
+                        <h1>PEARL</h1>
+                        <p>微粒なマイカの粒子で、光が当たると<br>透過しつつ各層ごとに複雑な<br>反射・屈折をする
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="control">
+            <img src="./images/arrow.png" id="upBtn">
+            <h3>Color Type</h3>
+            <img src="./images/arrow.png" id="downBtn">
+        </div>
+    </div>
+    <script type="text/javascript" src="./app.js"></script>
+    <script src="./vanilla-tilt.js"></script>
+    <div class="your-element"></div>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 25,
+            speed: 400,
+            glare: false,
+            "max-glare": 0,
+        });
+    </script>
+</body>
+
+</html>
