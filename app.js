@@ -1,20 +1,30 @@
 const circle = document.getElementById('circle');
 const upBtn = document.getElementById('upBtn');
 const downBtn = document.getElementById('downBtn');
+const colorTypes = ["metallic", "pearl", "solid"];
 
 let rotateValue = circle.style.transform;
 let rotateSum;
 let counter = 0;
 
 upBtn.onclick = function() {
-    counter += 1;
+    if (counter === 2) {
+        counter = 0;
+    } else {
+        counter += 1;
+    }
     rotateSum = rotateValue + "rotate(120deg)";
     circle.style.transform = rotateSum;
     rotateValue = rotateSum
     console.log(counter);
 }
+
 downBtn.onclick = function() {
-    counter -= 1;
+    if (counter === 0) {
+        counter = 2;
+    } else {
+        counter -= 1;
+    }
     rotateSum = rotateValue + "rotate(-120deg)";
     circle.style.transform = rotateSum;
     rotateValue = rotateSum
@@ -23,47 +33,13 @@ downBtn.onclick = function() {
 
 const card = document.querySelector('.card');
 
-upBtn.addEventListener('click', function() {
+function cardInitialize() {
     card.classList = "card"
-    if (counter % 3 === 0) {
-        card.classList.add("metallic");
-        console.log("meta")
-    } else if (counter % 3 === 1) {
-        card.classList.add("pearl");
-        console.log("pearl")
-    } else if (counter % 3 === 2) {
-        card.classList.add("colid");
-        console.log("colid")
-    }
-})
+    card.classList.add(colorTypes[counter]);
+}
 
-downBtn.addEventListener('click', function() {
-    card.classList = "card"
-    if (counter >= 0) {
-        if (counter % 3 === 0) {
-            card.classList.add("metallic");
-            console.log("meta")
-        } else if (counter % 3 === 1) {
-            card.classList.add("pearl");
-            console.log("pearl")
-        } else if (counter % 3 === 2) {
-            card.classList.add("colid");
-            console.log("colid")
-        }
-    } else if (counter < 0) {
-        if (counter % 3 === 0) {
-            card.classList.add("metallic");
-            console.log("meta")
-        } else if (counter % 3 === -2) {
-            card.classList.add("pearl");
-            console.log("pearl")
-        } else if (counter % 3 === -1) {
-            card.classList.add("colid");
-            console.log("colid")
-        }
-
-    }
-})
+upBtn.addEventListener('click', cardInitialize);
+downBtn.addEventListener('click', cardInitialize);
 
 const red = document.getElementById('red');
 const blue = document.getElementById('blue');
@@ -73,32 +49,16 @@ const black = document.getElementById('black');
 const brown = document.getElementById('brown');
 const gradiate = document.getElementById('gradiate');
 
-red.addEventListener('click', function() {
-    gradiate.classList = "gradiate";
-    gradiate.classList.add("graditionred");
-})
+function generateColorInitializer(color) {
+    return function() {
+        gradiate.classList = "gradiate";
+        gradiate.classList.add(`gradition${color}`);
+    }
+}
 
-blue.addEventListener('click', function() {
-    gradiate.classList = "gradiate";
-    gradiate.classList.add("graditionblue");
-})
-
-green.addEventListener('click', function() {
-    gradiate.classList = "gradiate";
-    gradiate.classList.add("graditiongreen");
-})
-
-yellow.addEventListener('click', function() {
-    gradiate.classList = "gradiate";
-    gradiate.classList.add("graditionyellow");
-})
-
-black.addEventListener('click', function() {
-    gradiate.classList = "gradiate";
-    gradiate.classList.add("graditionblack");
-})
-
-brown.addEventListener('click', function() {
-    gradiate.classList = "gradiate";
-    gradiate.classList.add("graditionbrown");
-})
+red.addEventListener('click', generateColorInitializer("red"));
+blue.addEventListener('click', generateColorInitializer("blue"));
+green.addEventListener('click', generateColorInitializer("green"));
+yellow.addEventListener('click', generateColorInitializer("yellow"));
+black.addEventListener('click', generateColorInitializer("black"));
+brown.addEventListener('click', generateColorInitializer("brown"));
